@@ -1,11 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+
+  <title>Site All-in-One : Image to Text & PNG to PDF</title>
 </head>
+
 <body>
-    
+
+  <h1>Outils Tout-en-Un</h1>
+
+  <nav>
+    <button class="tab-btn active" data-tool="ocr">Image vers Texte (OCR)</button>
+    <button class="tab-btn" data-tool="pngtopdf">PNG vers PDF</button>
+  </nav>
+
+  <section id="ocr" class="tool active">
+    <h2>Convertir Image en Texte</h2>
+    <input type="file" id="imageInputOCR" accept="image/*" />
+    <div id="loading">Extraction en cours...</div>
+    <textarea id="ocrResult" placeholder="Le texte extrait apparaîtra ici..." readonly></textarea>
+  </section>
+
+  <section id="pngtopdf" class="tool">
+    <h2>Convertir PNG en PDF</h2>
+    <input type="file" id="imageInputPDF" accept="image/png" />
+    <button id="convertBtn" disabled>Convertir en PDF</button>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4.0.2/dist/tesseract.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+
 </body>
 </html>
